@@ -1,0 +1,1 @@
+# Project card-delivery  [![Build status](https://ci.appveyor.com/api/projects/status/b24s2gieypw4uh1i/branch/master?svg=true)](https://ci.appveyor.com/project/OlgaLetkova/card-delivery/branch/master)
