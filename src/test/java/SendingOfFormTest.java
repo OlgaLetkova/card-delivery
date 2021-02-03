@@ -2,10 +2,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -27,5 +25,10 @@ public class SendingOfFormTest {
         form.$(".button").click();
         $(".notification__title").waitUntil(Condition.visible, 15000)
                 .shouldHave(Condition.exactText("Успешно!"));
+        String dateChecking = dateOfMeeting.format(df);
+        String text = "Встреча успешно забронирована на ";
+        $(".notification__content").waitUntil(Condition.visible, 15000)
+                .shouldHave(Condition.exactText(text.concat(dateChecking)));
+
     }
 }
